@@ -61,6 +61,7 @@ const Home: React.FC = () => {
               <Select
                 options={unitsData}
                 onChange={setUnitIn}
+                defaultValue={unitsData[1]}
                 autoFocus
                 isSearchable
                 placeholder="Escolha na lista"
@@ -79,7 +80,7 @@ const Home: React.FC = () => {
               <span>Escolha a medida:</span>
               <Select
                 options={unitsData}
-                defaultValue={unitsData[0]}
+                defaultValue={unitsData[1]}
                 onChange={setUnitOut}
                 autoFocus
                 isSearchable
