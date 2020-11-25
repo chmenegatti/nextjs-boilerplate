@@ -29,12 +29,9 @@ const Home: React.FC = () => {
   const [unitIn, setUnitIn] = useState({} as Units);
   const [unitOut, setUnitOut] = useState({} as Units);
 
-  var medida = weightData.filter(item => item.id === ingredient.value);
+  // var medida = weightData.filter(item => item.id === ingredient.value);
 
-  unitIn.value = 'xicara-cha';
-  unitOut.value = 'xicara-cha';
-
-  const valor = calcula(medida[0].value, unitIn.value, unitOut.value, measureIn);
+  // const valor = calcula(medida[0].value, unitIn.value, unitOut.value, measureIn);
 
   return (
     <Container>
@@ -76,7 +73,7 @@ const Home: React.FC = () => {
                 value={1}
                 onChange={ e => setMeasureIn(Number(e.target.value))}/>
             </Box>
-            <button onClick={() => setMeasureOut(Number(valor))}>
+            <button onClick={() => setMeasureOut(Number(10))}>
               <FiArrowRightCircle size={64}/>
             </button>
             <Box>
