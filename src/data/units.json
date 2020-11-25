@@ -1,0 +1,7 @@
+[
+  { "label": "Gramas", "value": "gramas" },
+  { "label": "Xícara (Chá)", "value": "xicara-cha" },
+  { "label": "Colher (Sopa)", "value": "colher-sopa" },
+  { "label": "Colher (Chá)", "value": "colher-cha" },
+  { "label": "Copo Americano", "value": "copo-americano" }
+]

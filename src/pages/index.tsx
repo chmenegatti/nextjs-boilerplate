@@ -4,21 +4,40 @@ import Select from 'react-select';
 
 import LogoTipo from '../assets/logo.svg';
 import { Container, ConvertFrame, Box, Ingredient, Main } from '@/styles/pages/Home';
-import ingredients from '../data/ingredients.json';
+import ingredientsData from '../data/ingredients.json';
+import unitsData from '../data/units.json';
+import weightData from '../data/weights.json';
 
 import { FiArrowRightCircle } from 'react-icons/fi';
+
+import calcula from '../lib/calculation';
+
+interface Ingredient {
+  value: string;
+  label: string;
+}
+interface Units {
+  value: string;
+  label: string;
+}
 
 const Home: React.FC = () => {
 
   const [measureIn, setMeasureIn] = useState(0);
   const [measureOut, setMeasureOut] = useState(0);
+  const [ingredient, setIngredient] = useState({} as Ingredient);
+  const [unitIn, setUnitIn] = useState({} as Units);
+  const [unitOut, setUnitOut] = useState({} as Units);
 
-  const calculado = measureIn * 10;
+  const medida = weightData.filter(item => item.id === ingredient.value);
+
+  const valor = calcula(medida[0].value, unitIn.value, unitOut.value, measureIn);
+  console.log(valor);
 
   return (
     <Container>
       <Head>
-        <title>NextJS</title>
+        <title>Conversor de Medidas</title>
       </Head>
       <Main>
         <div>
@@ -28,9 +47,10 @@ const Home: React.FC = () => {
           <p>Escolha o Ingrediente:</p>
             <div>
               <Select
-                options={ingredients}
+                onChange={setIngredient}
+                options={ingredientsData}
+                defaultValue={ingredientsData[0]}
                 autoFocus
-                isClearable
                 isSearchable
                 placeholder="Escolha na lista"
               />
@@ -39,8 +59,9 @@ const Home: React.FC = () => {
             <Box>
               <span>Escolha a medida:</span>
               <Select
+                options={unitsData}
+                onChange={setUnitIn}
                 autoFocus
-                isClearable
                 isSearchable
                 placeholder="Escolha na lista"
                 className="UnitSelect"
@@ -51,14 +72,16 @@ const Home: React.FC = () => {
                 id="mesureFrom"
                 onChange={ e => setMeasureIn(Number(e.target.value))}/>
             </Box>
-            <a href="#" onClick={ () => setMeasureOut(calculado)}>
+            <button onClick={() => setMeasureOut(Number(valor))}>
               <FiArrowRightCircle size={64}/>
-            </a>
+            </button>
             <Box>
               <span>Escolha a medida:</span>
               <Select
+                options={unitsData}
+                defaultValue={unitsData[0]}
+                onChange={setUnitOut}
                 autoFocus
-                isClearable
                 isSearchable
                 placeholder="Escolha na lista"
                 className="UnitSelect"

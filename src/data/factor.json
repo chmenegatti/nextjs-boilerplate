@@ -1,0 +1,6 @@
+[
+  { "id": "xicara-cha-to-gramas", "value": 1 },
+  { "id": "gramas-to-gramas", "value": 1 },
+  { "id": "colher-sopa-to-gramas", "value": 0.0625 },
+  { "id": "colher-cha-to-gramas", "value": 0.02083333 }
+]

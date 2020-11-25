@@ -66,18 +66,22 @@ export const ConvertFrame = styled.section`
   align-items: center;
   justify-content: space-between;
 
-  a {
+  button {
     margin: 1em;
     color: ${ props => props.theme.colors.color15 };
-    text-decoration: none;
     transition: color 0.3s;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    border-radius: 50%;
 
     &:hover {
-      color: ${ shade(0.6, '#9D8C7C')}
+      color: ${ shade(0.6, '#9D8C7C')};
     }
 
     &:active {
-      color: ${ lighten(0.1, '#9D8C7C')}
+      color: ${ lighten(0.1, '#9D8C7C')};
+      border: 0;
     }
   }
 `;
