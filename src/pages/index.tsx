@@ -31,12 +31,7 @@ const Home: React.FC = () => {
 
   var medida = weightData.filter(item => item.id === ingredient.value);
 
-  if (!medida) {
-    medida[0] = {id: 'fuba', value: 150};
-  }
-
   const valor = calcula(medida[0].value, unitIn.value, unitOut.value, measureIn);
-  console.log(valor);
 
   return (
     <Container>
@@ -53,7 +48,7 @@ const Home: React.FC = () => {
               <Select
                 onChange={setIngredient}
                 options={ingredientsData}
-                defaultValue={ingredientsData[0]}
+                defaultValue={ingredientsData[1]}
                 autoFocus
                 isSearchable
                 placeholder="Escolha na lista"
@@ -64,8 +59,8 @@ const Home: React.FC = () => {
               <span>Escolha a medida:</span>
               <Select
                 options={unitsData}
-                onChange={setUnitIn}
                 defaultValue={unitsData[1]}
+                onChange={setUnitIn}
                 autoFocus
                 isSearchable
                 placeholder="Escolha na lista"
@@ -75,6 +70,7 @@ const Home: React.FC = () => {
                 type="text"
                 name="mesureFrom"
                 id="mesureFrom"
+                value={1}
                 onChange={ e => setMeasureIn(Number(e.target.value))}/>
             </Box>
             <button onClick={() => setMeasureOut(Number(valor))}>
