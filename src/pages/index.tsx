@@ -29,10 +29,10 @@ const Home: React.FC = () => {
   const [unitIn, setUnitIn] = useState({} as Units);
   const [unitOut, setUnitOut] = useState({} as Units);
 
-  const medida = weightData.filter(item => item.id === ingredient.value);
+  var medida = weightData.filter(item => item.id === ingredient.value);
 
-  if (!medida[0].value) {
-    throw new Error;
+  if (!medida) {
+    medida[0] = {id: 'fuba', value: 150};
   }
 
   const valor = calcula(medida[0].value, unitIn.value, unitOut.value, measureIn);
