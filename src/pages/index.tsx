@@ -31,6 +31,10 @@ const Home: React.FC = () => {
 
   const medida = weightData.filter(item => item.id === ingredient.value);
 
+  if (!medida[0].value) {
+    throw new Error;
+  }
+
   const valor = calcula(medida[0].value, unitIn.value, unitOut.value, measureIn);
   console.log(valor);
 
