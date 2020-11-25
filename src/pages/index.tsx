@@ -31,6 +31,9 @@ const Home: React.FC = () => {
 
   var medida = weightData.filter(item => item.id === ingredient.value);
 
+  unitIn.value = 'xicara-cha';
+  unitOut.value = 'xicara-cha';
+
   const valor = calcula(medida[0].value, unitIn.value, unitOut.value, measureIn);
 
   return (
