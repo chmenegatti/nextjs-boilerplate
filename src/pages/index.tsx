@@ -7,7 +7,7 @@ import { Container, ConvertFrame, Box, Ingredient, Main } from '@/styles/pages/H
 import ingredientsData from '../data/ingredients.json';
 import unitsData from '../data/units.json';
 
-import { FiArrowRightCircle } from 'react-icons/fi';
+import { FiArrowDownCircle } from 'react-icons/fi';
 
 import conversao from '../lib/calculation';
 
@@ -81,7 +81,7 @@ const Home: React.FC = () => {
               <input onChange={ e => setMeasureIn(Number(e.target.value))}/>
             </Box>
             <button onClick={() => setMeasureOut(handleCalcula)}>
-              <FiArrowRightCircle size={64}/>
+              <FiArrowDownCircle size={64}/>
             </button>
             <Box>
               <span>Escolha a medida:</span>
