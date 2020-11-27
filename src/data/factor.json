@@ -1,6 +1,35 @@
+
 [
-  { "id": "xicara-cha-to-gramas", "value": 1 },
-  { "id": "gramas-to-gramas", "value": 1 },
-  { "id": "colher-sopa-to-gramas", "value": 0.0625 },
-  { "id": "colher-cha-to-gramas", "value": 0.02083333 }
+  { "factor": "xicaratogramas", "value": 250 },
+  { "factor": "sopatogramas", "value": 15 },
+  { "factor": "chatogramas", "value": 5 },
+  { "factor": "copotogramas", "value": 150 },
+  { "factor": "gramastogramas", "value": 1 },
+
+  { "factor": "xicaratosopa", "value":  16 },
+  { "factor": "sopatosopa", "value":  1 },
+  { "factor": "chatosopa", "value":  0.3333 },
+  { "factor": "gramastosopa", "value": 0.066666667  },
+  { "factor": "copotosopa", "value": 10 },
+
+  { "factor": "xicaratocha", "value":  48 },
+  { "factor": "sopatocha", "value":  3 },
+  { "factor": "chatocha", "value":  1 },
+  { "factor": "gramastocha", "value": 0.2  },
+  { "factor": "copotocha", "value": 100 },
+
+  { "factor": "xicaratocopo", "value": 1.666666667  },
+  { "factor": "sopatocopo", "value":  0.1 },
+  { "factor": "chatocopo", "value":  0.01 },
+  { "factor": "gramastocopo", "value": 0.006666007  },
+  { "factor": "copotocopo", "value": 1 },
+
+  { "factor": "xicaratoxicara", "value": 1  },
+  { "factor": "sopatoxicara", "value":  0.0625 },
+  { "factor": "chatoxicara", "value":  0.020866667 },
+  { "factor": "gramastoxicara", "value": 0.004  },
+  { "factor": "copotoxicara", "value": 0.6 }
+
+
 ]
+

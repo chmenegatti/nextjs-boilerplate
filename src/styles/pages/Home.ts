@@ -96,9 +96,11 @@ export const Box = styled.div`
   background-color: ${lighten(0.22, '#9D8C7C')};
   border-radius: 8px;
 
-  span {
+
+  span{
     font-variant: small-caps;
     font-size: 18px;
+    margin-bottom: 16px;
   }
 
   .UnitSelect {
@@ -110,6 +112,18 @@ export const Box = styled.div`
   > input {
     font-size: 18px;
     color: #202020;
+    width: 100%;
+    padding: 0.5em;
+
+    border: 2px solid ${props => props.theme.colors.color15};
+    border-radius: 5px;
+
+  }
+
+  h1 {
+    font-size: 18px;
+    color: #202020;
+
     width: 100%;
     padding: 0.5em;
 

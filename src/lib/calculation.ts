@@ -1,30 +1,39 @@
-const units = {
-  xicara: 'xicara-cha',
-  gramas: 'gramas',
-  sopa: 'colher-sopa',
-  cha: 'colher-cha'
-}
+import factor from '../data/factor.json';
 
-function calcula(medida: number, unitIn: string, unitsOut: string, measureIn: number): Number {
-  var valor = 0;
+function conversao (ingrediente: number, unidadeEntrada: string, unidadeSaida: string, quantidade: number): number {
+  const dataFactor = `${unidadeEntrada}to${unidadeSaida}`;
+  const data = factor.filter(item => item.factor === dataFactor);
 
-  switch(unitIn) {
-    case units.xicara:
-      if (unitsOut === units.xicara) {
-        valor = measureIn;
-      } else if (unitsOut === units.gramas) {
-        valor = measureIn * medida;
-      } else if (unitsOut === units.sopa) {
-        valor = measureIn * medida * 0.0625;
-      } else if (unitsOut === units.cha) {
-        valor = measureIn * medida * 0.02083333333;
-      } else {
-        valor = (measureIn * medida)/150;
+  let valor = 0;
+
+  switch (unidadeSaida) {
+    case 'gramas':
+      valor = ingrediente * data[0].value * quantidade;
+
+      if (dataFactor === 'gramastogramas') {
+        valor = data[0].value * quantidade;
+
+        return Number(valor);
       }
+      break;
+    case 'sopa':
+      valor = data[0].value * quantidade;
+      break;
 
+    case 'cha':
+      valor = data[0].value * quantidade;
+      break;
+
+    case 'copo':
+      valor = data[0].value * quantidade;
+      break;
+
+    case 'xicara':
+      valor = data[0].value * quantidade;
+      break;
   }
 
-  return Number(valor.toPrecision(2));
+  return Number(valor.toPrecision(3));
 }
 
-export default calcula;
+export default conversao;
